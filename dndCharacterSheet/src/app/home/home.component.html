@@ -2,11 +2,7 @@
 <div class="newChar">
   <button type="button" class="btn btn-success" (click)='newCharacter()' >Create Character</button>
 </div>
+
 <div class="heroes container">
-  <div class="badge">Hero Name</div>
-  <div class="badge">Hero Name</div>
-  <div class="badge">Hero Name</div>
-  <div class="badge">Hero Name</div>
-  <div class="badge">Hero Name</div>
-  <div class="badge">Hero Name</div>
+  <div *ngFor="let sheet of sheets" (click)='goToSheet(sheet)' class="badge" [innerText]="sheet"></div>
 </div>

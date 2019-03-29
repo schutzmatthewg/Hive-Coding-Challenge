@@ -15,4 +15,7 @@ export class AuthenticateService {
   signup(email: string, password: string){
     return firebase.auth().createUserWithEmailAndPassword(email, password);
   }
+  getCurrentUser(){
+    return firebase.auth().currentUser;
+  }
 }
