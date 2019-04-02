@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthenticateService } from '../authenticate.service';
 
 @Component({
   selector: 'app-sheet',
@@ -9,11 +10,17 @@ import { ActivatedRoute } from '@angular/router';
 export class SheetComponent implements OnInit {
   vals: sheetVals;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private authService: AuthenticateService,
+    private route: ActivatedRoute
+    ) { }
 
   ngOnInit() {
     this.route.snapshot.url[1].path;
 
+  }
+  saveData(){
+    
   }
 
 }
@@ -37,6 +44,9 @@ interface sheetVals{
   intelligence: number,
   wisdom: number,
   charisma: number,
+
+  //saving throws array
+  savingThrows: boolean[],
 
   //bonuses
   inspiration: number,
@@ -62,6 +72,9 @@ interface sheetVals{
   stealth: number,
   survival: number,
 
+  //skills proficiency array
+  skillsProficiency: boolean[],
+
   passiveWis: number,
 
   //defense stats
@@ -82,8 +95,8 @@ interface sheetVals{
   //money
   copper: number,
   silver: number,
-  gold: number,
   electrum: number,
+  gold: number,
   platinum: number,
   
 

@@ -9,6 +9,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SheetComponent } from './sheet/sheet.component';
+import { IonicApp, IonicModule } from 'ionic-angular';
+import { Subject } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -21,11 +23,12 @@ import { SheetComponent } from './sheet/sheet.component';
     SheetComponent
   ],
   imports: [
+    IonicModule.forRoot(AppComponent),
     FormsModule,
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, IonicApp]
 })
 export class AppModule { }

@@ -1,8 +1,10 @@
 <app-navbar></app-navbar>
-<div class="newChar">
-  <button type="button" class="btn btn-success" (click)='newCharacter()' >Create Character</button>
-</div>
+<div class="container">
+  <div class="newChar">
+    <button type="button" class="btn btn-success" (click)='newCharacter()'>Create Character</button>
+  </div>
 
-<div class="heroes container">
-  <div *ngFor="let sheet of sheets" (click)='goToSheet(sheet)' class="badge" [innerText]="sheet"></div>
+  <div class="heroes container">
+    <div *ngFor="let sheet of sheets" (click)='goToSheet(sheet)' class="badge" [innerText]="sheet"></div>
+  </div>
 </div>
