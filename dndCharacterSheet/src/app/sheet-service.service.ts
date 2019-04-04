@@ -20,4 +20,7 @@ export class SheetServiceService {
   getSheets(user){
     return firebase.database().ref('users/'+ user);
   }
+  getSheet(user, sheetid){
+    return firebase.database().ref('users/' + user + '/' + sheetid);
+  }
 }

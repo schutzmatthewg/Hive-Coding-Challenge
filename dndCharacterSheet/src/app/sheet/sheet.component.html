@@ -7,29 +7,29 @@
         <div class="rows">
             <div>
                 <label>Character Name: </label>
-                <input type="text" class="form-control" [(ngModel)]="sheetvals.charName">
+                <input type="text" class="form-control" [(ngModel)]="vals.charName">
             </div>
             <div>
                 <label>Class: </label>
-                <input type="text" class="form-control" [(ngModel)]="sheetvals.class">
+                <input type="text" class="form-control" [(ngModel)]="vals.class">
             </div>
             <div>
                 <label>Race: </label>
-                <input type="text" class="form-control" [(ngModel)]="sheetvals.race">
+                <input type="text" class="form-control" [(ngModel)]="vals.race">
             </div>
         </div>
         <div class="rows">
             <div>
                 <label>Alignment: </label>
-                <input type="text" class="form-control" [(ngModel)]="sheetvals.alignment">
+                <input type="text" class="form-control" [(ngModel)]="vals.alignment">
             </div>
             <div>
                 <label>Background:</label>
-                <input type="text" class="form-control" [(ngModel)]="sheetvals.background">
+                <input type="text" class="form-control" [(ngModel)]="vals.background">
             </div>
             <div>
                 <label>Level: </label>
-                <input type="number" class="form-control" [(ngModel)]="sheetvals.level">
+                <input type="number" class="form-control" [(ngModel)]="vals.level">
             </div>
         </div>
     </div>
@@ -38,48 +38,48 @@
             <h3 class="title">Attributes</h3>
             <div class="attributes box">
                 <div class="attribute">Strength:
-                    <input type="number" class="form-control" [(ngModel)]="sheetvals.strength">
+                    <input type="number" class="form-control" [(ngModel)]="vals.strength">
                 </div>
                 <div class="attribute">Dexterity:
-                    <input type="number" class="form-control" [(ngModel)]="sheetvals.dexterity">
+                    <input type="number" class="form-control" [(ngModel)]="vals.dexterity">
                 </div>
                 <div class="attribute">Constitution:
-                    <input type="number" class="form-control" [(ngModel)]="sheetvals.constitution">
+                    <input type="number" class="form-control" [(ngModel)]="vals.constitution">
                 </div>
                 <div class="attribute">Intelligence:
-                    <input type="number" class="form-control" [(ngModel)]="sheetvals.intelligence">
+                    <input type="number" class="form-control" [(ngModel)]="vals.intelligence">
                 </div>
                 <div class="attribute">Wisdom:
-                    <input type="number" class="form-control" [(ngModel)]="sheetvals.wisdom">
+                    <input type="number" class="form-control" [(ngModel)]="vals.wisdom">
                 </div>
                 <div class="attribute">Charisma:
-                    <input type="number" class="form-control" [(ngModel)]="sheetvals.charisma">
+                    <input type="number" class="form-control" [(ngModel)]="vals.charisma">
                 </div>
             </div>
             <h3 class="title">Bonuses</h3>
             <div class="bonuses box">
                 <div class="inspiration">Inspiration:
-                    <input type="number" class="form-control" [(ngModel)]="sheetvals.inspiration">
+                    <input type="number" class="form-control" [(ngModel)]="vals.inspiration">
                 </div>
                 <div class="proficiency">Proficiency Bonus:
-                    <input type="number" class="form-control" [(ngModel)]="sheetvals.proficiency">
+                    <input type="number" class="form-control" [(ngModel)]="vals.proficiency">
                 </div>
                 <div class="passiveWis">Passive Wisdom:
-                    <input type="number" class="form-control" [(ngModel)]="sheetvals.passiveWis">
+                    <input type="number" class="form-control" [(ngModel)]="vals.passiveWis">
                 </div>
             </div>
             <h3 class="title">Wealth</h3>
             <div class="money box">
                 Copper:
-                <input type="number" class="form-control" [(ngModel)]="sheetvals.copper">
+                <input type="number" class="form-control" [(ngModel)]="vals.copper">
                 Silver:
-                <input type="number" class="form-control" [(ngModel)]="sheetvals.silver">
+                <input type="number" class="form-control" [(ngModel)]="vals.silver">
                 Electrum:
-                <input type="number" class="form-control" [(ngModel)]="sheetvals.electrum">
+                <input type="number" class="form-control" [(ngModel)]="vals.electrum">
                 Gold:
-                <input type="number" class="form-control" [(ngModel)]="sheetvals.gold">
+                <input type="number" class="form-control" [(ngModel)]="vals.gold">
                 Platinum:
-                <input type="number" class="form-control" [(ngModel)]="sheetvals.platinum">
+                <input type="number" class="form-control" [(ngModel)]="vals.platinum">
             </div>
         </div>
         <div class="column2">
@@ -87,87 +87,87 @@
             <div class="defenseStats box">
                 <div class="ac">
                     Armor Class:
-                    <input type="number" class="form-control" [(ngModel)]="sheetvals.ac">
+                    <input type="number" class="form-control" [(ngModel)]="vals.ac">
                 </div>
                 <div class="initiative">
                     Initiative:
-                    <input type="number" class="form-control" [(ngModel)]="sheetvals.initiative">
+                    <input type="number" class="form-control" [(ngModel)]="vals.initiative">
                 </div>
                 <div class="speed">
                     Speed:
-                    <input type="number" class="form-control" [(ngModel)]="sheetvals.speed">
+                    <input type="number" class="form-control" [(ngModel)]="vals.speed">
                 </div>
                 <div class="hp">
                     <div class="curHp">
                         Current HP:
-                        <input type="number" class="form-control" [(ngModel)]="sheetvals.curHp">
+                        <input type="number" class="form-control" [(ngModel)]="vals.curHp">
                     </div>
                     <div class="maxHp">
                         Max HP:
-                        <input type="number" class="form-control" [(ngModel)]="sheetvals.maxHp">
+                        <input type="number" class="form-control" [(ngModel)]="vals.maxHp">
                     </div>
                     <div class="tempHp">
                         Temporary HP:
-                        <input type="number" class="form-control" [(ngModel)]="sheetvals.tempHp">
+                        <input type="number" class="form-control" [(ngModel)]="vals.tempHp">
                     </div>
                     <div class="hitDice">
                         Hit Dice:
-                        <input type="number" class="form-control" [(ngModel)]="sheetvals.hitDice">
+                        <input type="number" class="form-control" [(ngModel)]="vals.hitDice">
                     </div>
                 </div>
             </div>
             <h3 class="title">Attacks</h3>
             <div class="attacks box">
-                <input type="text" class="form-control" [(ngModel)]="sheetvals.attacks">
+                <input type="text" class="form-control" [(ngModel)]="vals.attacks">
             </div>
             <h3 class="title">Equipment</h3>
             <div class="equipment box">
-                <input type="text" class="form-control" [(ngModel)]="sheetvals.equipment">
+                <input type="text" class="form-control" [(ngModel)]="vals.equipment">
             </div>
             <h3 class="title">Feats:</h3>
             <div class="feats box">
-                <input type="text" class="form-control" [(ngModel)]="sheetvals.feats">
+                <input type="text" class="form-control" [(ngModel)]="vals.feats">
             </div>
         </div>
         <div class="column3">
             <h3 class="title">Skills</h3>
             <div class="skills box">
-                Acrobatics:
-                <input type="number" class="form-control smallInput" [(ngModel)]="sheetvals.acrobatics">
+                <input type="checkbox" class="form-check-input">Acrobatics:
+                <input type="number" class="form-control smallInput" [(ngModel)]="vals.acrobatics">
                 Animal Handling:
-                <input type="number" class="form-control smallInput" [(ngModel)]="sheetvals.animalHandling">
+                <input type="number" class="form-control smallInput" [(ngModel)]="vals.animalHandling">
                 Arcana:
-                <input type="number" class="form-control smallInput" [(ngModel)]="sheetvals.arcana">
+                <input type="number" class="form-control smallInput" [(ngModel)]="vals.arcana">
                 Athletics:
-                <input type="number" class="form-control smallInput" [(ngModel)]="sheetvals.athletics">
+                <input type="number" class="form-control smallInput" [(ngModel)]="vals.athletics">
                 Deception:
-                <input type="number" class="form-control smallInput" [(ngModel)]="sheetvals.deception">
+                <input type="number" class="form-control smallInput" [(ngModel)]="vals.deception">
                 History:
-                <input type="number" class="form-control smallInput" [(ngModel)]="sheetvals.history">
+                <input type="number" class="form-control smallInput" [(ngModel)]="vals.history">
                 Insight:
-                <input type="number" class="form-control smallInput" [(ngModel)]="sheetvals.insight">
+                <input type="number" class="form-control smallInput" [(ngModel)]="vals.insight">
                 Intimidation:
-                <input type="number" class="form-control smallInput" [(ngModel)]="sheetvals.intimidation">
+                <input type="number" class="form-control smallInput" [(ngModel)]="vals.intimidation">
                 Investigation:
-                <input type="number" class="form-control smallInput" [(ngModel)]="sheetvals.investigation">
+                <input type="number" class="form-control smallInput" [(ngModel)]="vals.investigation">
                 Medicine:
-                <input type="number" class="form-control smallInput" [(ngModel)]="sheetvals.medicine">
+                <input type="number" class="form-control smallInput" [(ngModel)]="vals.medicine">
                 Nature:
-                <input type="number" class="form-control smallInput" [(ngModel)]="sheetvals.nature">
+                <input type="number" class="form-control smallInput" [(ngModel)]="vals.nature">
                 Percpetion:
-                <input type="number" class="form-control smallInput" [(ngModel)]="sheetvals.perception">
+                <input type="number" class="form-control smallInput" [(ngModel)]="vals.perception">
                 Performance:
-                <input type="number" class="form-control smallInput" [(ngModel)]="sheetvals.performance">
+                <input type="number" class="form-control smallInput" [(ngModel)]="vals.performance">
                 Persuasion:
-                <input type="number" class="form-control smallInput" [(ngModel)]="sheetvals.persuasion">
+                <input type="number" class="form-control smallInput" [(ngModel)]="vals.persuasion">
                 Religion:
-                <input type="number" class="form-control smallInput" [(ngModel)]="sheetvals.religion">
+                <input type="number" class="form-control smallInput" [(ngModel)]="vals.religion">
                 Sleight of Hand:
-                <input type="number" class="form-control smallInput" [(ngModel)]="sheetvals.sleightOfHand">
+                <input type="number" class="form-control smallInput" [(ngModel)]="vals.sleightOfHand">
                 Stealth:
-                <input type="number" class="form-control smallInput" [(ngModel)]="sheetvals.stealth">
+                <input type="number" class="form-control smallInput" [(ngModel)]="vals.stealth">
                 Survival:
-                <input type="number" class="form-control smallInput" [(ngModel)]="sheetvals.survival">
+                <input type="number" class="form-control smallInput" [(ngModel)]="vals.survival">
             </div>
         </div>
     </div>
@@ -176,19 +176,19 @@
         <h3 class="title">Roll Playing Information</h3>
         <div class="personality">
             Personality:
-            <input type="textarea" class="form-control" [(ngModel)]="sheetvals.personality">
+            <input type="textarea" class="form-control" [(ngModel)]="vals.personality">
         </div>
         <div class="ideals">
             Ideals:
-            <input type="text" class="form-control" [(ngModel)]="sheetvals.ideals">
+            <input type="text" class="form-control" [(ngModel)]="vals.ideals">
         </div>
         <div class="bonds">
             Bonds:
-            <input type="text" class="form-control" [(ngModel)]="sheetvals.bonds">
+            <input type="text" class="form-control" [(ngModel)]="vals.bonds">
         </div>
         <div class="flaws">
             Flaws:
-            <input type="text" class="form-control" [(ngModel)]="sheetvals.flaws">
+            <input type="text" class="form-control" [(ngModel)]="vals.flaws">
         </div>
     </div>
 

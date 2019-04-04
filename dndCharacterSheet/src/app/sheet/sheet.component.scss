@@ -8,12 +8,7 @@ h1{
     display: flex;
     justify-content: center;
 }
-.box{
-    margin:10px;
-    padding:10px;
-    border-radius: 5px;
-    background:rgba(255, 255, 255, 0.25);
-}
+
 .title{
     border-radius: 5px;
     text-align: center;
@@ -30,6 +25,13 @@ h1{
     flex-direction: column;
     justify-content: space-between;    
 }
+
+input{
+    color: white;
+    background-color: rgb(218, 122, 32);
+}
+
+//default css for segments
 .rows{
     display: flex;
     justify-content: space-between;
@@ -37,4 +39,10 @@ h1{
 .columns{
     display:flex;
     flex-wrap: wrap;
+}
+.box{
+    margin:10px;
+    padding:10px;
+    border-radius: 5px;
+    background:rgba(255, 255, 255, 0.25);
 }
