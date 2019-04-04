@@ -17,13 +17,13 @@ ng serve --open
 ### Prerequisites
 
 This is an angular project so you will need npm and Node.js.
-If you don't have them, you can install them by visiting [nodejs.org]https://nodejs.org/en/).
+If you don't have them, you can install them by visiting https://nodejs.org/en/ .
 
 
 ## Built With
 
-* [Angular cli] (https://angular.io/)- The web framework used.
-* [Firebase] (https://firebase.google.com/)- The database used.
+* Angular cli: https://angular.io/ - The web framework used.
+* Firebase https://firebase.google.com/ - The database used.
 
 ## Authors
 
