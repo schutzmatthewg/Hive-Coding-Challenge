@@ -1,51 +1,56 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthenticateService } from '../authenticate.service';
 import { SheetServiceService } from '../sheet-service.service';
 
 @Component({
-  selector: 'app-sheet',
-  templateUrl: './sheet.component.html',
-  styleUrls: ['./sheet.component.scss']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-export class SheetComponent implements OnInit {
-  vals: sheetVals;
-  user: string;
-  sheetid: string;
+export class HomeComponent implements OnInit {
+  sheets = [];
+  sheetidArr = [];
+  sheet: sheetVals;
+  initialName: string;
 
   constructor(
+    private SheetServiceService: SheetServiceService,
     private authService: AuthenticateService,
-    private route: ActivatedRoute,
-    private sheetService: SheetServiceService
+    private router: Router
   ) { }
 
   ngOnInit() {
-    //assign the user and sheetid for other method use
-    //set the vals variable equal to the database at user/sheet
-
-    this.user = this.authService.getCurrentUser().uid;
-    this.sheetid = this.route.snapshot.url[1].path;
-    //backup just in case firebase doesnt work
-    this.sheetService.getSheet(this.user, this.sheetid).on("value", resp => {
-      this.vals = resp.val();
-    })
-    if (this.vals == null) {
-      this.vals = this.defaultVals();
-    }
-
-  }
-  saveData() {
-    this.sheetService.edit(this.user, this.route.snapshot.url[1], this.vals).then(
-      success => {
-        console.log(success);
+    this.SheetServiceService.getSheets(this.authService.getCurrentUser().uid).on(
+      "value", resp => {
+        this.sheets = Object.values(resp.val());
+        this.sheetidArr = Object.keys(resp.val());
       }
-    )
+    );
   }
-  defaultVals() {
+
+  newCharacter() {
+    this.sheet = this.defaultVals(this.initialName);
+    let user = this.authService.getCurrentUser().uid;
+    this.SheetServiceService.newSheet(user).then(
+      success => {
+        this.SheetServiceService.edit(user, success.key, this.sheet);
+        this.router.navigate(['sheet/' + success.key]);
+        
+      }
+    );
+
+  }
+  goToSheet(sheetid) {
+    let user = this.authService.getCurrentUser().uid;
+    this.router.navigate(['sheet/' + sheetid]);
+  }
+
+  defaultVals(name) {
     //basic info
     let vals: sheetVals = {
 
-      charName: "",
+      charName: name,
 
       class: "",
       race: "",
@@ -62,13 +67,6 @@ export class SheetComponent implements OnInit {
       intelligence: 0,
       wisdom: 0,
       charisma: 0,
-
-      //modifiers
-      strMod: 0,
-      dexMod: 0,
-      conMod: 0,
-      wisMod: 0,
-      chaMod: 0,
 
       //saving throws array
       savingThrows: [
@@ -104,7 +102,7 @@ export class SheetComponent implements OnInit {
       stealth: 0,
       survival: 0,
 
-      //skills proficiency array
+      //skills proficiency array future possible feature
       skillsProficiency: [
         false,
         false,
@@ -135,7 +133,7 @@ export class SheetComponent implements OnInit {
       curHp: 0,
       tempHp: 0,
       maxHp: 0,
-      hitDice: 0,
+      hitDice: "",
 
       //traits
       personality: "",
@@ -179,13 +177,6 @@ interface sheetVals {
   wisdom: number,
   charisma: number,
 
-  //modifiers
-  strMod: number,
-  dexMod: number,
-  conMod: number,
-  wisMod: number,
-  chaMod: number,
-
   //saving throws array
   savingThrows: boolean[],
 
@@ -225,7 +216,7 @@ interface sheetVals {
   curHp: number,
   tempHp: number,
   maxHp: number,
-  hitDice: number,
+  hitDice: string,
 
   //traits
   personality: string,

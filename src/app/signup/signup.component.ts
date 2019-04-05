@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticateService } from '../authenticate.service';
 import { Router } from '@angular/router';
-import { SheetServiceService } from '../sheet-service.service';
+import { AuthenticateService } from '../authenticate.service';
 
 
 @Component({
@@ -22,7 +21,6 @@ export class SignupComponent implements OnInit {
   }
 
   signup(){
-
     this.authService.signup(this.email, this.password).then(
       success => {
         console.log(success);

@@ -1,0 +1,38 @@
+.signup{
+    margin-top: 1em;
+}
+.login{
+    margin-top: 1em;
+}
+.message{
+    color:white;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+.loginBox{
+    padding: .5em;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,.7);
+}
+.buttons{
+    display:flex;
+    justify-content: space-around;
+}
+input{
+    width: 80%;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0%;
+    margin: 1em;
+    color: white;
+}
+button{
+    background-color: transparent;
+    color: white;
+    border-color: white;
+}
+::placeholder{
+    color:white;
+}

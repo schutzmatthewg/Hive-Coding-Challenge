@@ -1,0 +1,15 @@
+<div class="loginBox">
+  <input type='text' class="form-control" [(ngModel)]="email" placeholder="Email">
+  <input type='password' class="form-control" [(ngModel)]="password" placeholder="Password">
+  <div class="buttons">
+    <div class="login">
+      <button type='submit' class="btn" (click)='login()'>Sign in</button>
+    </div>
+    <div class="signup">
+      <a routerLink="/signup">
+        <button type='button' class="btn">Sign Up</button>
+      </a>
+    </div>
+  </div>
+  <div [innerText]="errMsg" class="message"></div>
+</div>

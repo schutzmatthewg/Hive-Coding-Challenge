@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticateService } from '../authenticate.service';
 import { Router } from '@angular/router';
+import { AuthenticateService } from '../authenticate.service';
 
 @Component({
   selector: 'app-login',
@@ -11,12 +11,15 @@ export class LoginComponent implements OnInit {
   email: string;
   password: string;
   currUser: string;
+  errMsg: string;
 
   constructor(private authService: AuthenticateService, private router: Router) {
     
   }
 
   ngOnInit() {
+    //resets the error message so that it goes away on refresh
+    this.errMsg = "";
   }
 
   login(){
@@ -26,6 +29,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['home']);
       }, error =>{
         console.log(error);
+        this.errMsg = "Invalid username or password!"
       }
       
     );

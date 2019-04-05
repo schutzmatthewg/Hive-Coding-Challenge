@@ -1,34 +1,40 @@
 <app-navbar></app-navbar>
 <div class="container">
     <h1>DUNGEONS & DRAGONS 5e</h1>
-    <button type="button" class="btn btn-success" (click)="saveData()">Save</button>
+    <div class="buttons">
+        <button type="button" class="btn btn-success" (click)="saveData()">Save Character</button>
+        <button type="button" class="btn btn-danger" (click)="deleteCharacter()">Delete Character</button>
+    </div>
+    <div [innerText]="saveMsg"></div>
+
+
     <h2>Character Information</h2>
     <div class="characterInfo box">
         <div class="rows">
             <div>
-                <label>Character Name: </label>
+                Character Name: 
                 <input type="text" class="form-control" [(ngModel)]="vals.charName">
             </div>
             <div>
-                <label>Class: </label>
+                Class: 
                 <input type="text" class="form-control" [(ngModel)]="vals.class">
             </div>
             <div>
-                <label>Race: </label>
+                Race:
                 <input type="text" class="form-control" [(ngModel)]="vals.race">
             </div>
         </div>
         <div class="rows">
             <div>
-                <label>Alignment: </label>
+                Alignment: 
                 <input type="text" class="form-control" [(ngModel)]="vals.alignment">
             </div>
             <div>
-                <label>Background:</label>
+                Background:
                 <input type="text" class="form-control" [(ngModel)]="vals.background">
             </div>
             <div>
-                <label>Level: </label>
+                Level: 
                 <input type="number" class="form-control" [(ngModel)]="vals.level">
             </div>
         </div>
@@ -39,21 +45,33 @@
             <div class="attributes box">
                 <div class="attribute">Strength:
                     <input type="number" class="form-control" [(ngModel)]="vals.strength">
+                    <div [innerText]="roundDown((vals.strength-10)/2)" class="modifier">
+                    </div>
                 </div>
                 <div class="attribute">Dexterity:
                     <input type="number" class="form-control" [(ngModel)]="vals.dexterity">
+                    <div [innerText]="roundDown((vals.dexterity-10)/2)" class="modifier">
+                    </div>
                 </div>
                 <div class="attribute">Constitution:
                     <input type="number" class="form-control" [(ngModel)]="vals.constitution">
+                    <div [innerText]="roundDown((vals.constitution-10)/2)" class="modifier">
+                    </div>
                 </div>
                 <div class="attribute">Intelligence:
                     <input type="number" class="form-control" [(ngModel)]="vals.intelligence">
+                    <div [innerText]="roundDown((vals.intelligence-10)/2)" class="modifier">
+                    </div>
                 </div>
                 <div class="attribute">Wisdom:
                     <input type="number" class="form-control" [(ngModel)]="vals.wisdom">
+                    <div [innerText]="roundDown((vals.wisdom-10)/2)" class="modifier">
+                    </div>
                 </div>
                 <div class="attribute">Charisma:
                     <input type="number" class="form-control" [(ngModel)]="vals.charisma">
+                    <div [innerText]="roundDown((vals.charisma-10)/2)" class="modifier">
+                    </div>
                 </div>
             </div>
             <h3 class="title">Bonuses</h3>
@@ -65,7 +83,8 @@
                     <input type="number" class="form-control" [(ngModel)]="vals.proficiency">
                 </div>
                 <div class="passiveWis">Passive Wisdom:
-                    <input type="number" class="form-control" [(ngModel)]="vals.passiveWis">
+                    <div [innerText]="10+(roundDown(vals.wisdom-10)/2)" class="modifier">
+                    </div>
                 </div>
             </div>
             <h3 class="title">Wealth</h3>
@@ -112,27 +131,26 @@
                     </div>
                     <div class="hitDice">
                         Hit Dice:
-                        <input type="number" class="form-control" [(ngModel)]="vals.hitDice">
+                        <input type="text" class="form-control" [(ngModel)]="vals.hitDice">
                     </div>
                 </div>
             </div>
             <h3 class="title">Attacks</h3>
             <div class="attacks box">
-                <input type="text" class="form-control" [(ngModel)]="vals.attacks">
+                <textarea rows="5" class="form-control" [(ngModel)]="vals.attacks"></textarea>
             </div>
             <h3 class="title">Equipment</h3>
             <div class="equipment box">
-                <input type="text" class="form-control" [(ngModel)]="vals.equipment">
+                <textarea rows="5" class="form-control" [(ngModel)]="vals.equipment"></textarea>
             </div>
             <h3 class="title">Feats:</h3>
             <div class="feats box">
-                <input type="text" class="form-control" [(ngModel)]="vals.feats">
+                <textarea rows="5" class="form-control" [(ngModel)]="vals.feats"></textarea>
             </div>
         </div>
         <div class="column3">
             <h3 class="title">Skills</h3>
             <div class="skills box">
-                <input type="checkbox" class="form-check-input">Acrobatics:
                 <input type="number" class="form-control smallInput" [(ngModel)]="vals.acrobatics">
                 Animal Handling:
                 <input type="number" class="form-control smallInput" [(ngModel)]="vals.animalHandling">
@@ -176,19 +194,19 @@
         <h3 class="title">Roll Playing Information</h3>
         <div class="personality">
             Personality:
-            <input type="textarea" class="form-control" [(ngModel)]="vals.personality">
+            <textarea rows="5" class="form-control" [(ngModel)]="vals.personality"></textArea>
         </div>
         <div class="ideals">
             Ideals:
-            <input type="text" class="form-control" [(ngModel)]="vals.ideals">
+            <textarea rows="5" class="form-control" [(ngModel)]="vals.ideals"></textarea>
         </div>
         <div class="bonds">
             Bonds:
-            <input type="text" class="form-control" [(ngModel)]="vals.bonds">
+            <textarea rows="5" class="form-control" [(ngModel)]="vals.bonds"></textarea>
         </div>
         <div class="flaws">
             Flaws:
-            <input type="text" class="form-control" [(ngModel)]="vals.flaws">
+            <textarea rows="5" class="form-control" [(ngModel)]="vals.flaws"></textarea>
         </div>
     </div>
 
